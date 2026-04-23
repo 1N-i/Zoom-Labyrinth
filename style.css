@@ -1,0 +1,45 @@
+:root {
+    --wall: blue;
+    --freeSpace: white;
+    --size: 50px;
+    --playerSize: 50px; /* ajeitar posicionamento do player */
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+}
+
+table {
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.wall, .space, .end{
+    min-width: var(--size);
+    max-width: var(--size);
+    width: var(--size);
+    height: var(--size);
+    padding: 0;
+}
+
+.wall {
+    background-color: var(--wall);
+}
+
+.space {
+    background-color: var(--freeSpace);
+}
+
+.end {
+    background-color: black;
+}
+
+img {
+    width: var(--playerSize);
+    height: var(--playerSize);
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Labyrinth</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <table>
+            <tr> <!-- Line 1 -->
+                <td class="space"> <img src="player.png"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+            </tr>
+
+            <tr> <!-- Line 2 -->
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+            </tr>
+
+            <tr> <!-- Line 3 -->
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+            </tr>
+
+            <tr> <!-- Line 4 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+            </tr>
+
+            <tr> <!-- Line 5 -->
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+            </tr>
+
+            <tr> <!-- Line 6 -->
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+            </tr>
+
+            <tr> <!-- Line 7 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="end"></td>
+            </tr>
+        </table>
+
+        <button onclick="upZoom()">Aumentar Zoom</button>
+        <button onclick="downZoom()">Diminuir Zoom</button>
+
+        <script src="script.js"></script>
+    </body>
+</html>
