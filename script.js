@@ -80,8 +80,6 @@ function updatePosition() {
 function downZoom() {
     sizeNum -= 1;
     cssRoot.style.setProperty("--size", sizeNum + "vw");
-    playerSizeNum = sizeNum - 5;
-    cssRoot.style.setProperty("--playerSize", playerSizeNum + "vw");
 }
 
 function multipleZoom(times) {
@@ -89,5 +87,5 @@ function multipleZoom(times) {
     downZoom();
     setTimeout(() => {
         multipleZoom(times - 1);
-    }, 25); //Await 100ms
+    }, 30); //Await 30ms
 }
