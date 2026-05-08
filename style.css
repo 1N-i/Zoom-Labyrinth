@@ -1,8 +1,5 @@
 :root {
-    --wall: blue;
-    --freeSpace: white;
-    --size: 350px;
-    --playerSize: 350px;
+    --size: 35vw;
 }
 
 body {
@@ -28,6 +25,6 @@ table {
     transition: all 0.2s ease-in-out;
 }
 
-.wall { background-color: var(--wall); }
-.space { background-color: var(--freeSpace); }
+.wall { background-color: blue; }
+.space { background-color: white; }
 .end { background-color: black; }

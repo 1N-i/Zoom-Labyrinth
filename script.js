@@ -24,22 +24,22 @@ document.addEventListener("keydown", function (event) {
 function isWall(x, y) {
     const targetCell = table.rows[y].cells[x];
     if (targetCell.classList.contains("endOne")) {
-        multipleZoom(7)
+        multipleZoom(15)
         targetCell.classList.remove("endOne", "end");
     } else if (targetCell.classList.contains("endTwo")) {
-        multipleZoom(9)
+        multipleZoom(6)
         targetCell.classList.remove("endTwo", "end");
     } else if (targetCell.classList.contains("endThree")) {
-        multipleZoom(7)
+        multipleZoom(5)
         targetCell.classList.remove("endThree", "end");
     } else if (targetCell.classList.contains("endFour")) {
         multipleZoom(3)
         targetCell.classList.remove("endFour", "end");
     } else if (targetCell.classList.contains("endFive")) {
-        multipleZoom(2)
+        multipleZoom(1)
         targetCell.classList.remove("endFive", "end");
     } else if (targetCell.classList.contains("endSix")) {
-        multipleZoom(2)
+        multipleZoom(1)
         targetCell.classList.remove("endSix", "end");
     }
     return targetCell.classList.contains("wall");
@@ -78,10 +78,10 @@ function updatePosition() {
 }
 
 function downZoom() {
-    sizeNum -= 10;
-    cssRoot.style.setProperty("--size", sizeNum + "px");
-    playerSizeNum = sizeNum - 10;
-    cssRoot.style.setProperty("--playerSize", playerSizeNum + "px");
+    sizeNum -= 1;
+    cssRoot.style.setProperty("--size", sizeNum + "vw");
+    playerSizeNum = sizeNum - 5;
+    cssRoot.style.setProperty("--playerSize", playerSizeNum + "vw");
 }
 
 function multipleZoom(times) {
@@ -89,5 +89,5 @@ function multipleZoom(times) {
     downZoom();
     setTimeout(() => {
         multipleZoom(times - 1);
-    }, 100); //Await 100ms
+    }, 25); //Await 100ms
 }
