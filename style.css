@@ -1,9 +1,8 @@
 :root {
     --wall: blue;
     --freeSpace: white;
-    --size: 50px;
-    --playerSize: 50px;
-    /* ajeitar posicionamento do player */
+    --size: 350px;
+    --playerSize: 350px;
 }
 
 body {
@@ -20,29 +19,15 @@ table {
     border-collapse: collapse;
 }
 
-.wall,
-.space,
-.end {
+.wall, .space, .end, img {
     min-width: var(--size);
     max-width: var(--size);
     width: var(--size);
     height: var(--size);
     padding: 0;
+    transition: all 0.2s ease-in-out;
 }
 
-.wall {
-    background-color: var(--wall);
-}
-
-.space {
-    background-color: var(--freeSpace);
-}
-
-.end {
-    background-color: black;
-}
-
-img {
-    width: var(--playerSize);
-    height: var(--playerSize);
-}
+.wall { background-color: var(--wall); }
+.space { background-color: var(--freeSpace); }
+.end { background-color: black; }

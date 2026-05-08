@@ -1,98 +1,160 @@
-<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Labyrinth</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Labyrinth</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <table>
+            <tr> <!-- Line 1 -->
+                <td class="space"> <img src="player.png"></td>
+                <td class="space"></td>
+                <td class="endOne end space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="endThree end space"></td>
+            </tr>
 
-<body>
-    <table>
-        <tr> <!-- Line 1 -->
-            <td class="space"> <img src="player.png"></td>
-            <td class="space"></td>
-            <td class="end" id="objectiveOne"></td>
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="end" id="objectiveThree"></td>
-        </tr>
+            <tr> <!-- Line 2 -->
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="endTwo end space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+            </tr>
 
-        <tr> <!-- Line 2 -->
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-            <td class="end" id="objectiveTwo"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-        </tr>
+            <tr> <!-- Line 3 -->
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+            </tr>
 
-        <tr> <!-- Line 3 -->
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-        </tr>
+            <tr> <!-- Line 4 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+            </tr>
 
-        <tr> <!-- Line 4 -->
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-        </tr>
+            <tr> <!-- Line 5 -->
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="endFour end space"></td>
+            </tr>
 
-        <tr> <!-- Line 5 -->
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="end" id="objectiveFour"></td>
-        </tr>
+            <tr> <!-- Line 6 -->
+                <td class="endFive end space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+            </tr>
 
-        <tr> <!-- Line 6 -->
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-            <td class="space"></td>
-            <td class="wall"></td>
-            <td class="wall"></td>
-        </tr>
+            <tr> <!-- Line 7 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+            </tr>
 
-        <tr> <!-- Line 7 -->
-            <td class="end" id="objectiveMain"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-        </tr>
-    </table>
+            <tr> <!-- Line 8 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="wall"></td>
+                <td class="wall"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+            </tr>
 
-    <button onclick="upZoom()">Aumentar Zoom</button>
-    <button onclick="downZoom()">Diminuir Zoom</button>
+            <tr> <!-- Line 9 -->
+                <td class="endSix end space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+            </tr>
 
-    <script src="script.js"></script>
-</body>
+            <tr> <!-- Line 10 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+            </tr>
 
+            <tr> <!-- Line 11 -->
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="space"></td>
+                <td class="end"></td>
+            </tr>
+        </table>
+
+        <script src="script.js"></script>
+    </body>
 </html>
-
-<!-- 
-objectiveOne: Tira o zoom 2 vezes
-objectiveTwo: Tira o zoom 2 vezes
-objectiveThree: Tira o zoom 3 vezes
-objectiveFour: Tira o zoom 2 vezes
-
-Cada zoom deve ter um pequeno delay entre eles;
- -->

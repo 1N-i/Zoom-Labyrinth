@@ -1,22 +1,21 @@
 const cssRoot = document.documentElement;
-const table = document.querySelector('table');
-const playerImg = document.querySelector('img');
+const table = document.querySelector("table");
+const playerImg = document.querySelector("img");
 
 let cordX = 0, cordY = 0;
 let sizeString = getComputedStyle(cssRoot).getPropertyValue("--size");
 let sizeNum = parseFloat(sizeString);
 let playerSizeString = getComputedStyle(cssRoot).getPropertyValue("--playerSize");
 let playerSizeNum = parseFloat(playerSizeString);
-upZoom(); downZoom();
 
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'w') {
+document.addEventListener("keydown", function (event) {
+    if (event.key === "w") {
         moveUp();
-    } else if (event.key === 's') {
+    } else if (event.key === "s") {
         moveDown();
-    } else if (event.key === 'a') {
+    } else if (event.key === "a") {
         moveLeft();
-    } else if (event.key === 'd') {
+    } else if (event.key === "d") {
         moveRight();
     }
     updatePosition();
@@ -24,7 +23,26 @@ document.addEventListener('keydown', function (event) {
 
 function isWall(x, y) {
     const targetCell = table.rows[y].cells[x];
-    return targetCell.classList.contains('wall');
+    if (targetCell.classList.contains("endOne")) {
+        multipleZoom(7)
+        targetCell.classList.remove("endOne", "end");
+    } else if (targetCell.classList.contains("endTwo")) {
+        multipleZoom(9)
+        targetCell.classList.remove("endTwo", "end");
+    } else if (targetCell.classList.contains("endThree")) {
+        multipleZoom(7)
+        targetCell.classList.remove("endThree", "end");
+    } else if (targetCell.classList.contains("endFour")) {
+        multipleZoom(3)
+        targetCell.classList.remove("endFour", "end");
+    } else if (targetCell.classList.contains("endFive")) {
+        multipleZoom(2)
+        targetCell.classList.remove("endFive", "end");
+    } else if (targetCell.classList.contains("endSix")) {
+        multipleZoom(2)
+        targetCell.classList.remove("endSix", "end");
+    }
+    return targetCell.classList.contains("wall");
 }
 
 function moveUp() {
@@ -52,23 +70,24 @@ function moveRight() {
 }
 
 function updatePosition() {
-    const targetRow = table.rows[cordY];
-    const targetCell = targetRow.cells[cordX];
+    let targetRow = table.rows[cordY];
+    let targetCell = targetRow.cells[cordX];
     targetRow = table.rows[cordY];
     targetCell = targetRow.cells[cordX];
     targetCell.appendChild(playerImg);
 }
 
-function upZoom() {
-    sizeNum += 10;
-    cssRoot.style.setProperty('--size', sizeNum + "px");
-    playerSizeNum = sizeNum - 10;
-    cssRoot.style.setProperty('--playerSize', playerSizeNum + "px");
-}
-
 function downZoom() {
     sizeNum -= 10;
-    cssRoot.style.setProperty('--size', sizeNum + "px");
+    cssRoot.style.setProperty("--size", sizeNum + "px");
     playerSizeNum = sizeNum - 10;
-    cssRoot.style.setProperty('--playerSize', playerSizeNum + "px");
+    cssRoot.style.setProperty("--playerSize", playerSizeNum + "px");
+}
+
+function multipleZoom(times) {
+    if (times <= 0) return;
+    downZoom();
+    setTimeout(() => {
+        multipleZoom(times - 1);
+    }, 100); //Await 100ms
 }
